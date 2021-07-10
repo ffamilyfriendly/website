@@ -1,0 +1,21 @@
+#localeSelector {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+}
+
+#localeSelector select {
+    background-color: transparent;
+    border: 0;
+    font-size: xx-large;
+    list-style: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+select::-ms-expand {
+    display: none;
+}
