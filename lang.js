@@ -47,7 +47,7 @@ const lines = {
                 `,
             swe: `
                 Jag heter Jonathan och jag har existerat i <b>${datum.getFullYear() - birthdate.getFullYear()} år!</b> Jag brukar normalt sätt spendera mina dagar med att hänga med vänner, jobba, eller programmera.
-                Om jag ska vara uppriktig så finns det inte särskilt mycker interesant att säga om mig. Denna lista borde räcka med vad som finns kvar att säga
+                Om jag ska vara uppriktig så finns det inte särskilt mycket interesant att säga om mig. Denna lista borde räcka med vad som finns kvar att säga
 
                 <ul>
                     <li>Jag har ett väldigt coolt garage 😎</li>
@@ -98,6 +98,12 @@ const lines = {
         nonpriocontact: {
             def: "I also use these",
             swe: "Jag använder även dessa"
+        }
+    },
+    projects: {
+        proj: {
+            def: "Project",
+            swe: "Projekt"
         }
     }
 }
