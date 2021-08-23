@@ -1,12 +1,6 @@
 :root {
-    --prog-outer: white;
+    --prog-outer: rgb(59, 59, 59);
     --prog-inner: blue;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --prog-outer: rgb(59, 59, 59);
-    }
 }
 
 video {
