@@ -3,7 +3,9 @@
 :root {
     --bg: white;
     --bg-text: black;
-    --bg-link: cyan;
+    --bg-link: teal;
+    --card: rgba(255, 255, 255, 0.685);
+    --card-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-family: "IBM Plex Sans", sans-serif;
 }
 
@@ -105,6 +107,9 @@ section ul {
     :root {
         --bg: black;
         --bg-text: white;
+        --bg-link: cyan;
+        --card: rgb(27, 27, 27);
+        --card-shadow: 0;
     }
 
     .title-list {
