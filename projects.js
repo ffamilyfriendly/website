@@ -8,6 +8,14 @@ const projects = [
         links: { github: "https://github.com/ffamilyfriendly/armadillo/" }
     },
     {
+        title: "Thread-Watcher",
+        description: {
+            def: "Thread-Watcher is a bot which mitigates discords decision to only let threads stay open for 24 hours without activity by automatically un-archiving selected threads!. <small>demo link leads to my discord server</small> ",
+            swe: "Thread-Watcher är en bot som automatiskt o-arkiverar specifierade discord-trådar. <small>demo-länken leder till min discord server</small>"
+        },
+        links: { github: "https://github.com/ffamilyfriendly/Thread-Watcher/", website: "https://familyfriendly.xyz/thread/", demo: "https://discord.gg/793fagUfmr" }
+    },
+    {
         title: "Video-Storage",
         description: {
             def: "Video-Storage was created for armadillo to support offline viewing and segments large files into smaller chunks and meticulously pieces them back togheter when needed",
