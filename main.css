@@ -43,8 +43,7 @@ a {
 }
 
 .title{
-   font-size: 3.5rem; 
-
+   font-size: 3.5rem;
 }
 
 .title-list {
@@ -95,7 +94,7 @@ section ul {
 
 @media only screen and (min-width: 600px) {
     .title {
-        font-size: 6rem; 
+        font-size: 6rem;
     }
 
     .title-container {

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit converter</title>
+
+    <!-- Meta -->
+    <meta name="title" content="Unit converter">
+    <meta name="description" content="Unit converter script that converts any unit to the largest alternative">
+    <meta name="keywords" content="tags">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Jonathan Hermin">
+
+    <!-- Resource links -->
+    <link rel="stylesheet" href="prettify.css">
+    <link rel="stylesheet" href="./project.css">
+    <link rel="stylesheet" href="./convert.css">
+</head>
+<body>
+    <div id="container">
+        <section>
+            <h1>Unit converter</h1>
+            <p><i>Auto-magically™</i> convert measurements to the largest alternative say 62℉ to celcius  </p>
+        </section>
+
+        <section>
+            <h2>How to use</h2>
+            <ol>
+                <li>input measurements of whatever supported unit</li>
+                <li>watch it be converted!</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <h1>Demo</h1>
+        <input id="from" type="text">
+        <div id="translatesto">
+            <h2>Conversion(s)</h2>
+            <ol id="conversions">
+
+            </ol>
+        </div>
+        
+
+        <h1>source</h1>
+        <small>source of the actual converter is available <a href="./coverterlib.js">here</a></small>
+        <pre class="prettyprint">
+String.prototype.span = function() {
+    let span = document.createElement("span")
+    span.innerText = this
+    return span
+}
+
+String.prototype.bold = function() {
+    let span = document.createElement("b")
+    span.innerText = this
+    return span
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const c = document.getElementById("conversions")
+    document.getElementById("from").onkeydown = (ev) => {
+        if(ev.ctrlKey || ev.metaKey || ev.altKey) return
+        let conversions = doConversions(ev.target.value + ev.key)
+        c.innerHTML = ""
+        for(let conversion of conversions) {
+            let li = document.createElement("li"),
+            [ from, to] = [ document.createElement("span"), document.createElement("span")]
+            from.append(" from ".bold(), conversion.from.span())
+            to.append(" to ".bold(), conversion.to.span())
+            li.append(from, to)
+            c.appendChild(li)
+        }
+    }
+})
+        </pre>
+
+    </div>
+    <div id="footer">
+        <div>
+            <h2>unit converter</h2>
+            <p>originally made for my <a href="https://github.com/ffamilyfriendly/converter">converter bot</a></p>
+            <p><b>Github:</b> <a href="https://github.com/ffamilyfriendly/converter/blob/main/lib/measurements.js">clicky click</a></p>
+        </div>
+        <div>
+            <h2>Legal</h2>
+            <p>Made by <a href="https://familyfriendly.xyz">Family Friendly</a>.</p>
+            <p>Licensed under MIT unless otherwise noted</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="./coverterlib.js"></script>
+    <script src="./convert.js"></script>
+</body>
+</html>

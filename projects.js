@@ -24,20 +24,20 @@ const projects = [
         links: { github: "https://github.com/ffamilyfriendly/Video-Storage", demo: "./project/video-storage.html" }
     },
     {
+        title: "Converter library",
+        description: {
+            def: "I got tired of yankees and their weird units so I decided to create a library that automatically detects and converts units. Works both ways: yankee -> normal and normal -> yankee <br><small>also supports currency conversions</small>",
+            swe: "jänkar är jobbiga. Skapade ett skript som tar deras konstiga sätt att mäta saker och sedan gör om det till normala enheter. Går även att konvertera pengavärden (inklusive crypto 🤮)"
+        },
+        links: { github: "https://github.com/ffamilyfriendly/converter/blob/main/lib/measurements.js", demo: "./project/convert.html" }
+    },
+    {
         title: { def: "this site", swe: "denna sida" },
         description: {
             def: "You are looking at it right now! Hopefully you like what you see",
             swe: "Du tittar på den just nu! Förhoppningsvist gillar du vad du ser"
         },
         links: { github: "https://github.com/ffamilyfriendly/website", website: "https://familyfriendly.xyz" }
-    },
-    {
-        title: { def: "More to come", swe: "Mera kommer" },
-        description: {
-            def: "My website is still in construction and more projects will be added soon",
-            swe: "Denna sida är fortfarande under konstruktion och mer projekt kommer bli tillagda snart!"
-        },
-        links: { github: "https://github.com/ffamilyfriendly/"}
     }
 ]
 

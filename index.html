@@ -15,8 +15,36 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <meta name="author" content="Jonathan Hermin">
+    <style>
+        #the_game {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        #the_game p {
+            background-color: rgba(255, 0, 0, 0.589);
+            border: 2px solid red;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
 </head>
 <body data-page="index">
+
+    <!-- Just fyi, you lost the game by just reading the source -->
+    <div class="hidden" id="the_game">
+        <p>Oh and by the way, you just lost <a href="https://en.wikipedia.org/wiki/The_Game_(mind_game)"><b>the game</b></a> :)</p>
+    </div>
+
     <div id="title-container">
         <div>
             <h1 class="oswald title">Family Friendly</h1>
@@ -29,5 +57,16 @@
         </div>
     </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const chance = Math.random()
+        const date = new Date().getDay()
+
+        // make visitors loose the game if its thursday or if they are ~ one of ten unlucky un-consenting participants
+        if(chance > 0.9 || date === 4) {
+            document.getElementById("the_game").classList.remove("hidden")
+        }
+    })
+</script>
 <script src="./lang.js"></script>
 </html>
