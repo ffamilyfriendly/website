@@ -1,0 +1,10 @@
+.gh-stats {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.gh-stats > p {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+}
