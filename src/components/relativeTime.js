@@ -12,7 +12,7 @@ export default function(props) {
         ["hours", (delta / 1000 / 60 / 60)]
     ].find(e => Math.floor(Math.abs(e[1])) !== 0)
 
-    const rtf = new Intl.RelativeTimeFormat(window.navigator.language, { style: "short" })
+    const rtf = new Intl.RelativeTimeFormat(window.navigator.language, { style: props.style || "short" })
 
     return (
         <span title={ pushDate.toDateString() } > { rtf.format(diff[1].toFixed(1), diff[0]) } </span>
