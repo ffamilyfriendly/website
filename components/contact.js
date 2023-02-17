@@ -1,11 +1,12 @@
-import { FaClock, FaDiscord, FaEnvelope, FaGithub, FaInbox, FaLinkedin, FaSteam, FaTwitter, FaVoicemail } from "react-icons/fa"
-import Lang from "../../components/lang"
-import "./contact.css"
+import { useEffect, useState } from "react"
+import { FaClock, FaDiscord, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import Lang from "./lang"
+import styles from "./contact.module.css"
 
 const Pill = props => {
     return (
-        <div className="contact-pill">
-            <div style={{ "backgroundColor": props.color }} className="icon">
+        <div className={styles.pill}>
+            <div style={{ "backgroundColor": props.color }} className={styles.icon}>
                 {props.icon}
                 {props.name}
             </div>
@@ -14,22 +15,28 @@ const Pill = props => {
     )
 }
 
-export default function(props) {
+const Contact = (props) => {
 
     const date = new Date()
-    const formatted = new Intl.DateTimeFormat(window.navigator.language, { timeStyle: "short", timeZone: "Europe/Stockholm" }).format(date)
+
+    const [ swedenTime, setSwedenTime ] = useState()
+
+    useEffect(() => {
+        const formatted = new Intl.DateTimeFormat(window.navigator.language, { timeStyle: "short", timeZone: "Europe/Stockholm" }).format(date)
+        setSwedenTime(formatted)
+    }, [])
 
     return (
-        <div className="contact-page">
+        <div className={styles.contact}>
             <h1 className="display"><Lang sv="Kontakta mig" en="Contact me" /></h1>
-            <div className="infobox">
+            <div className={styles.infobox}>
                 <FaClock />
-                <span><Lang en="Time in Sweden:" sv="Tid i Sverige:" /> { formatted }</span>
+                <span><Lang en="Time in Sweden:" sv="Tid i Sverige:" /> { swedenTime }</span>
             </div>
 
             <h2><Lang sv="Snabbast svar" en="fastest response" /></h2>
             <div className="contact-list">
-                <Pill icon={ <FaEnvelope /> } name={ <Lang sv="Epost" en="Email" /> } value="me@familyfriendly.xyz" />
+                <Pill icon={ <FaEnvelope /> } name={ <Lang sv="Epost" en="Email" /> } value="mailto:me@familyfriendly.xyz" username="me@familyfriendly.xyz" />
                 <Pill color="#5865F2" icon={ <FaDiscord /> } name="Discord" value="https://threadwatcher.xyz/devserver" username="Family friendly#6191" />
             </div>
 
@@ -42,3 +49,5 @@ export default function(props) {
         </div>
     )
 }
+
+export default Contact

@@ -1,5 +1,4 @@
-import { useState } from "react"
-import Lang from "../../../components/lang"
+import Lang from "../../lang"
 
 const Website = (props) => {
     return (
@@ -38,11 +37,13 @@ const ShortDescription = () => {
     )
 }
 
-export default {
+const project = {
     name: "Website",
     language: "js",
     github: "https://github.com/ffamilyfriendly/website",
     about: <Website />,
     description: <ShortDescription />,
-    tags: [ "react", "js" ]
+    tags: [ "react", "next.js", "js", "SSR", "react.js", "javascript" ]
 }
+
+export default project

@@ -7,7 +7,7 @@
     border-radius: 0.4rem;
 }
 
-.contact-pill {
+.pill {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -17,7 +17,7 @@
     overflow: hidden;
 }
 
-.contact-pill > .icon {
+.icon {
     background-color: var(--surface);
     padding: 0.5rem;
     display: flex;

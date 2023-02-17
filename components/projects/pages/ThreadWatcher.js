@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Lang from "../../../components/lang"
-import RelativeTime from "../../../components/relativeTime"
+import Lang from "../../lang"
+import RelativeTime from "../../relativeTime"
 
 const ThreadWatcher = (props) => {
 
@@ -84,7 +84,7 @@ const ShortDescription = () => {
     )
 }
 
-export default {
+const project = {
     name: "Thread-Watcher",
     github: "https://github.com/ffamilyfriendly/Thread-Watcher/",
     website: "https://threadwatcher.xyz",
@@ -92,5 +92,8 @@ export default {
     about: <ThreadWatcher />,
     example: null,
     description: <ShortDescription />,
-    tags: [ "discord", "ts" ]
+    textDescription: "Thread-Watcher is a popular discord bot designed to keep Threads open",
+    tags: [ "discord", "ts", "bot", "discord bot", "utility", "top.gg", "auto thread", "auto-thread", "forum" ]
 }
+
+export default project

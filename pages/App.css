@@ -59,3 +59,9 @@ a {
 a:visited {
   color: rgb(1, 156, 156);
 }
+
+iframe.wide {
+  width: 100%;
+  border: 0;
+  outline: 1px solid white;
+}

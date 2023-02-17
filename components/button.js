@@ -1,5 +1,4 @@
-import "./button.css"
-
+import styles from "./button.module.css"
 const Button = props => {
 
     const handleClick = (ev) => {
@@ -7,7 +6,7 @@ const Button = props => {
     }
 
     return (
-        <button onClick={handleClick} className="button"> { props.children } </button>
+        <button onClick={handleClick} className={styles.button}> { props.children } </button>
     )
 }
 

@@ -1,34 +1,38 @@
-.project-listing {
+.project_page {
+    max-width: 1000px;
+}
+
+.listing {
     background-color: var(--surface);
     padding: 1rem;
     border-radius: 0.5rem;
     position: relative;
 }
 
-.project-list {
+.project_list {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.project-header a {
+.project_header a {
     text-decoration: none;
     color: inherit;
     transition: 0.2s;
 }
 
-.project-header.scroll a {
+.project_header.scroll a {
     position: fixed;
     background-color: var(--primary);
     padding: 0.25rem;
 }
 
-.project-name {
+.name {
     display: inline-flex;
     gap: 0.5rem;
 }
 
-.project-expand {
+.expand {
     color: white;
     position: absolute;
     bottom: 0;
@@ -36,31 +40,31 @@
     padding: 0.5rem;
 }
 
-.project-title-big {
+.title_big {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.project-title-big > svg {
+.title_big .svg {
     height: 100%;
     width: auto;
     height: 3rem;
 }
 
-.project-buttons {
+.buttons {
     display: flex;
     gap: 1rem;
     margin: 1rem;
 }
 
-.project-tags {
+.tags {
     display: flex;
     gap: 0.4rem;
     margin-top: 1rem;
 }
 
-.project-tags > .tag {
+.tags > .tag {
     background-color: var(--surface);
     padding: 0.2rem;
     min-width: 2rem;
@@ -68,6 +72,6 @@
     border-radius: 0.3rem;
 }
 
-section {
+.project_page section {
     margin-bottom: 1rem;
 }

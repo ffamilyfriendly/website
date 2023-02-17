@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { GoClock, GoIssueOpened, GoRepoForked, GoStar } from "react-icons/go"
-import "./github.css"
+import { GoClock, GoRepoForked, GoStar } from "react-icons/go"
+import styles from "./github.module.css"
 import Lang from "./lang"
 import RelativeTime from "./relativeTime"
 
@@ -39,7 +39,7 @@ export function GithubStats(props) {
     if(!stats) return ( <div className="gh-stats"></div> )
 
     return (
-        <div className="gh-stats">
+        <div className={styles.gh_stats}>
             <p> <GoStar title={ <Lang sv="Github stjärnor" en="GitHub stars" /> } color="gold" /> { stats.stargazers_count || 0 } </p>
             <p> <GoRepoForked title={ <Lang en="GitHub forks" /> } /> { stats.forks_count } </p>
             <p> <GoClock title={ <Lang sv="Senaste uppdateringen" en="Last push" /> } /> <RelativeTime time={ stats.pushed_at } /> </p>
