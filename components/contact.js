@@ -17,11 +17,10 @@ const Pill = props => {
 
 const Contact = (props) => {
 
-    const date = new Date()
-
     const [ swedenTime, setSwedenTime ] = useState()
 
     useEffect(() => {
+        const date = new Date()
         const formatted = new Intl.DateTimeFormat(window.navigator.language, { timeStyle: "short", timeZone: "Europe/Stockholm" }).format(date)
         setSwedenTime(formatted)
     }, [])

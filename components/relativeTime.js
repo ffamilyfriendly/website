@@ -21,7 +21,7 @@ const RelativeTime = (props) => {
     useEffect(() => {
         const _rtf = new Intl.RelativeTimeFormat(window.navigator.language, { style: props.style || "short" })
         setRtf(_rtf)
-    }, [ ])
+    }, [ props.style ])
 
     return (
         <span title={ pushDate.toDateString() } > { rtf ? rtf.format(diff[1].toFixed(1), diff[0]) : null } </span>

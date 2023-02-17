@@ -8,7 +8,6 @@ import { FaArrowLeft, FaCompass, FaGithub } from "react-icons/fa"
 import Lang from "../../components/lang"
 import { GithubStats } from "../../components/github"
 import Giscus from "@giscus/react"
-import Head from "next/head"
 import SEO from "../../components/seo"
 
 const Comments = () => {
@@ -35,6 +34,16 @@ export function Project(props) {
 
     const router = useRouter()
     const { name } = router.query
+
+    const [offset, setOffset] = useState(0);
+    useEffect(() => {
+        if(!window) return
+        const onScroll = () => setOffset(window.scrollY)
+        window.removeEventListener("scroll", onScroll)
+        window.addEventListener("scroll", onScroll)
+        return () => window.removeEventListener("scroll", onScroll)
+    }, [name])
+
     if(!name) return null
 
     if(!projectsList[name]) {
@@ -46,16 +55,6 @@ export function Project(props) {
         )
     }
     const { language, github, about, example, website, textDescription, tags } = projectsList[name]
-
-    const [offset, setOffset] = useState(0);
-
-    useEffect(() => {
-        if(!window) return
-        const onScroll = () => setOffset(window.scrollY)
-        window.removeEventListener("scroll", onScroll)
-        window.addEventListener("scroll", onScroll)
-        return () => window.removeEventListener("scroll", onScroll)
-    }, [name])
 
     return (
         <div className={styles.project_page}>
